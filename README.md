@@ -6,6 +6,7 @@ A Flask-based API for managing a donut menu with simple add, get, and delete end
 ```bash
 pip install flask
 python app.py
+```
 
 ## Test Case
 GET /items
