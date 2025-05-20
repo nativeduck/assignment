@@ -9,11 +9,11 @@ python app.py
 ```
 
 ## Test Case
-GET /items
-POST /items
-Example of post body
-A simple validation is done to the type is alphabet only.
-A response "Type field must contain only alphabets." will be shown if the type is not alphabet
+* GET /items
+* POST /items
+  * Example of post body
+    * A simple validation is done to the type is alphabet only.
+    * A response "Type field must contain only alphabets." will be shown if the type is not alphabet
 ```json
 {
   "type": "Cake",
@@ -28,12 +28,17 @@ A response "Type field must contain only alphabets." will be shown if the type i
 }
 ```
 
-DELETE /items?id=0001&type=donut
-Delete only if both match.
-A response "error": "Item not found or type mismatch." will be shown if either one mismatch.
-A response "error": "Missing id or type" if id or type is missing.
+* DELETE /items?id=0001&type=donut
+  * Delete only if both match.
+    * A response "error": "Item not found or type mismatch." will be shown if either one mismatch.
+    * A response "error": "Missing id or type" if id or type is missing.
 
+## Dependency Injection
 Uses a class (ValidationService) with dependency injection-style passing.
+```python
+validator = ValidationService()
+validator.validate_type(new_item.get("type", ""))
+```
 
-### Run on Cloud
+## Run on Cloud
 https://nativeduck.pythonanywhere.com/items
