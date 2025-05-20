@@ -31,7 +31,7 @@ python app.py
 * DELETE /items?id=0001&type=donut
   * Delete only if both match.
     * A response "error": "Item not found or type mismatch." will be shown if either one mismatch.
-    * A response "error": "Missing id or type" if id or type is missing.
+    * A response "error": "Missing id or type" if id or type is missing."
 
 ## Dependency Injection
 Uses a class (ValidationService) with dependency injection-style passing.
